@@ -17,7 +17,6 @@ public class Main {
             } catch (ArrayIndexOutOfBoundsException ex) {
                 System.out.println("zu weit");
             }
-
         }
     }
 }

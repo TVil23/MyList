@@ -22,33 +22,33 @@ public class List {
     }
 
     // get(index)
-    public int get(int i) {
-        if (index >= size) {
-            throw new Exception("Zu weit");
-
+    public int get(int index) {
+        if (index >= size)
+            throw new ArrayIndexOutOfBoundsException("");
         var node = startNode;
         for (int i = 0; i < index; i++) {
             node = node.next;
-            if (node == null){}
-
         }
-
-        return 0;
+        if (node == null)
+            throw new ArrayIndexOutOfBoundsException("Zu weit");
+        return node.value;
     }
 
-    public int size(){
-        return size;
+    public int size() {
+        return size; // Test
     }
 
     // class Node
-    class Node {
-        public Node next;
-        int value;
 
-        public Node(int i) {
+    class Node {
+        int value;
+        Node next;
+
+        public Node(int value) {
+            this.value = value;
+            this.next = null;
         }
     }
-
 }
 
 
