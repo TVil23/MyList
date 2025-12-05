@@ -1,13 +1,23 @@
 package org.example;
 
+import org.example.list.List;
+
 public class Main {
-    static void main() {
+    public static void main(String[] args) {
 
-        IO.println(String.format("Hello and welcome!"));
+        var myList = new List();
+        myList.add(1);
+        myList.add(3);
+        myList.add(5);
+        myList.add(7);
 
-        for (int i = 1; i <= 5; i++) {
+        for (int i = 0; i < 3; i++) {
+            try {
+                System.out.println(myList.get(i));
+            } catch (ArrayIndexOutOfBoundsException ex) {
+                System.out.println("zu weit");
+            }
 
-            IO.println("i = " + i);
         }
     }
 }
